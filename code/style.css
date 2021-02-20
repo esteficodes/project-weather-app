@@ -1,49 +1,174 @@
 * {
- box-sizing: border-box;
- text-align: center;
-}
-.header + * {
-  text-align: center;
-}
-.container {
-  padding: 60px 20px; 
-  margin: 20px;
-  background: linear-gradient(-45deg, #28b10d, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
-  /* border-radius: 200px 0; */
-}
-.temperature-container {
-  display: block;
-  justify-content: center;
-}
-.weather-description {
-  padding-top: 10px;
-  text-transform: capitalize;
-  font-size: 25px;
-}
-.sunrise-sunset-container {
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 20px;
-}
-.sunrise-sunset-container + * {
-  flex-direction: row;
-}
-.five-day-forecast {
+  /* box-sizing: border-box; */
+   text-align: center;
+   margin: 0;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 300;
+ }
+ .header + * {
+   text-align: center;
+ }
+ 
+ .weather-message-container {
+   width: 400px;
+   align-self: center;
+   font-size: 1.1em;
+ }
+ .container {
+   display: flex;
+   flex-direction: column;
+   padding: 60px 20px; 
+   /* background: linear-gradient(-45deg, #a7db9c, #d3aaba, #81c6df, #a5e5d6);  */
+   /* background-size: 400% 400%; */
+   /* animation: gradient 5s infinite;  */
+   /* transition: background 1s ease ; */
+   border-bottom-left-radius: 50% 20%;
+   border-bottom-right-radius: 50% 20%;
+ }
+ .city-name {
+   text-size-adjust: auto ;
+   padding: 20px ;
+   font-size: 8vw;
+   text-transform: uppercase;
+ }
+ .main-temperature {
+   font-size: 7vw;
+   text-size-adjust: auto ;
+ }
+ .weather-feels-like {
+   font-size: 5vw;
+   text-size-adjust: auto;
+ }
+ .weather-description {
+   padding-top: 10px;
+   text-transform: capitalize;
+   font-size: 7vw;
+   text-size-adjust: auto;
+ }
+ .sunrise-sunset-container {
+   display: flex;
+   justify-content: space-evenly;
+   padding: 20px;
+ }
+ .sunrise  {
+   font-size: 4vw;
+   text-size-adjust: auto;
+ }
+ .sunset {
+   font-size: 4vw;
+   text-size-adjust: auto;
+ }
+ .weather-icon {
+   animation: bounce 1s infinite linear;
+   position: relative; 
+   width:100%!important;
+   height:100%!important;
+ }
+ .five-day-forecast {
+   width: 100%;
+   margin: 10px;
+   /* animation: pulse 2s infinite linear; */
   
-}
+ }
+ 
+ .forecast{
+   display: flex;
+   flex-direction: row;
+   padding: 20px;
+   justify-content: space-between;
+   border-top: 1px solid #92b3c8;
+   align-items: center;
+   font-size: 4vw;
+   text-size-adjust: auto;
+ }
+ 
+ 
+ /* @keyframes gradient {
+   0% { background-position: 0% 50%; }
+   50% { background-position: 100% 50%; }
+   100% { background-position: 0% 50%; }
+ } */
+ @keyframes bounce {
+   0% { top: 0; }
+   50% { top: -0.2em; }
+   70% { top: -0.3em; }
+   100% { top: 0; }
+ }
+ /* @keyframes pulse {
+   0% { opacity: 1; }
+   50% { opacity: 0.5; }
+   100% { opacity: 1; }
+ } */
+ 
+ .footer {
+   background-color: #92b3c8;
+   color: white;
+   height: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   /* position: absolute;
+   bottom: 0;
+   width: 100%
+   display: none; */
+ }
+ 
+ .other-cities {
+     font-size: 30px;
+     text-align: center;
+     font-weight: bold;
+ }
+ .other-cities-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+   background-color: rgba(255, 255, 255, 0.3);
+   backdrop-filter: blur(20px);
+   width: 80%;
+   margin: auto;
+   padding-bottom: 20px;
+   padding-top: 20px;
+ }
+ 
+ body {
+   background-image: url("./images/stockholm3.jpg")
+ }
+ 
+ .background-image {
+   opacity: 50%;
+   background-size:contain;
+ }
+ 
+ /*Media queries*/
+ /*Tablet*/
+ @media (min-width: 667px) and (max-width: 1024px) {
+   .forecast-container {
+     padding: 20px;
+     font-size: 18px;
+   }
+   .weather-icon {
+     animation: bounce 1s infinite linear;
+     position: relative; 
+     max-width: 100%;
+   }
+   
+ 
+ /*Desktop*/
+ @media (min-width: 1025px) {
+   /* .stlm-img {
+     background-image: url(./images/stockoholm.jpg);
+   } */
+   
+   body {
+     background-image: url("./images/stockholm.jpg")
+   }
+   .weather-icon {
+     animation: bounce 1s infinite linear;
+     position: relative; 
+     max-width: 100%;
+   }
+ }
+ 
+ }
 
-
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
